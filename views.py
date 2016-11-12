@@ -1,6 +1,6 @@
 from flashcard_app import app
 from flask import request, make_response, render_template, current_app, url_for
-import uuid, json
+import uuid, json, os
 
 @app.route("/")
 def index():
@@ -20,7 +20,7 @@ def createfile():
         response = make_response("Filename Salvo!")
         response.set_cookie("filename", fname)
         
-        path = fname + ".txt"
+        path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
         cards = []
         cards.append(titulo)
 
