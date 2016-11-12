@@ -1,0 +1,15 @@
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+
+<form method="post" action="/createfile" 
+enctype="multipart/form-data">
+    <label>Titulo <br />
+        <input type="text" name="titulo" id="titulo" />
+    </label>
+        <input class="hide" type="text" name="filename" id="filename" value={{randname}} />
+
+    <input type="submit" value="Criar" />
+</form>
