@@ -1,0 +1,22 @@
+<h1> Adicionar Cards </h1>
+
+{% if mensagem %}
+    <p>{{ mensagem }}</p>
+    </br>
+{% endif %}
+
+
+<form method="post" action="{{ url_for('add') }}" enctype="multipart/form-data">
+    
+    <div>
+        <label>Pergunta </br>
+            <input type="text" name="pergunta" id="pergunta" />
+        </label> </br>
+
+        <label>Resposta </br>
+            <input type="text" name="resposta" id="resposta" />
+        </label> </br>
+    </div>
+
+    <input type="submit" value="Salvar" />
+</form>
