@@ -6,7 +6,10 @@ import uuid, json, os
 
 @app.route("/")
 def index():
-    return "<h1>Flashcard App!</h1>"
+    return """<h1>Flashcard App!</h1>
+    <button type="button"><a href='{}'>Criar Novo</a></button>
+    <button type="button"><a href='{}'>Abrir</a></button>
+    """.format(url_for('new'), url_for('opencards'))
 
 
 @app.route("/new")
