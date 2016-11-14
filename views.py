@@ -1,5 +1,6 @@
 from flashcard_app import app
 from flask import request, make_response, render_template, current_app, url_for
+from werkzeug import secure_filename
 import uuid, json, os
 
 
@@ -51,9 +52,29 @@ def add():
         with open(path, mode="w") as f:
             json.dump(cards, f)
 
-        ok = "Card adicionado com sucesso!"
+        num = len(cards) - 1
+        ok = "Card {} adicionado com sucesso!".format(num)
 
         return render_template('addcards.html', mensagem=ok)
         
 
     return render_template('addcards.html')
+
+
+@app.route("/createcards/download_file")
+def download_file():
+    fname = request.cookies.get('filename')
+    path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
+    cards = []
+    with open(path, mode="r") as f:
+        cards = json.load(f)
+    
+    New_fname = secure_filename(cards[0])
+    New_path = os.path.join(current_app.config['TEMP'], (New_fname + ".txt"))
+
+    with open(New_path, mode="w") as f:
+        json.dump(cards, f)
+
+    download = url_for('static', filename=(New_fname + ".txt"))
+
+    return "<a href='{}' download> Baixar txt </a> ".format(download)
