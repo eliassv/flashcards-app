@@ -57,7 +57,6 @@ def add():
 
         return render_template('addcards.html', mensagem=ok)
         
-
     return render_template('addcards.html')
 
 
@@ -78,3 +77,26 @@ def download_file():
     download = url_for('static', filename=(New_fname + ".txt"))
 
     return "<a href='{}' download> Baixar txt </a> ".format(download)
+
+
+@app.route("/opencards", methods=["GET", "POST"])
+def opencards():
+    if request.method == "POST":
+        thefile = request.files.get('cardsfile')
+
+        fname = str(uuid.uuid4())
+        path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
+        thefile.save(path)
+        
+        cards = []
+        
+        try:
+            with open(path, mode="r") as f:
+                cards = json.load(f)
+            
+            return "<h1> Seus Cards </h1> <p>{}</p>".format(cards)
+        
+        except:
+            return "<h1> Seus Cards </h1> <p>Não foi possível carregar os seus cards</p>"        
+
+    return render_template('uploadcards.html')
