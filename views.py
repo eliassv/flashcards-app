@@ -7,10 +7,7 @@ from tmpfile import tmpfile
 
 @app.route("/")
 def index():
-    return """<h1>Flashcard App!</h1>
-    <button type="button"><a href='{}'>Criar Novo</a></button>
-    <button type="button"><a href='{}'>Abrir</a></button>
-    """.format(url_for('createcards'), url_for('opencards'))
+    return render_template("index.html")
 
 
 @app.route("/createcards", methods=["GET", "POST"])
@@ -28,7 +25,7 @@ def createcards():
         return response
     
     random = str(uuid.uuid4())
-    return render_template("new.html", randname=random)
+    return render_template("createcards.html", randname=random)
 
 
 @app.route("/createcards/add", methods=["GET", "POST"])
