@@ -1,4 +1,7 @@
-<h1> Adicionar Cards </h1>
+{% extends "base.html" %}
+{% block content %}
+
+<h2> Adicionar Cards </h2>
 
 {% if mensagem %}
     <p>{{ mensagem }}</p>
@@ -26,3 +29,5 @@
 
 <button type="button"><a href='{{ url_for('download_file') }}'>
     Finalizar</a></button>
+
+{% endblock content %}

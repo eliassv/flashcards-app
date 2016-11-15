@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+
 <form method="post" action="{{ url_for('opencards') }}"
 enctype="multipart/form-data">
     <label>Arquivo: </br>
@@ -5,6 +8,6 @@ enctype="multipart/form-data">
     </label> </br>
 
     <input type="submit" value="Enviar" />
-
 </form>
 
+{% endblock content %}
