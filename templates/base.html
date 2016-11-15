@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {{title or "Flashcard App"}} {% endblock %}</title>
+
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+    <h1> Flashcard App! </h1>
+
+    {% block content %} {% endblock %}
+
+</body>
+</html>
