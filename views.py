@@ -1,7 +1,8 @@
 from flashcard_app import app
 from flask import request, make_response, render_template, current_app, url_for
 from werkzeug import secure_filename
-import uuid, json, os
+import uuid, os
+from tmpfile import tmpfile
 
 
 @app.route("/")
@@ -9,13 +10,7 @@ def index():
     return """<h1>Flashcard App!</h1>
     <button type="button"><a href='{}'>Criar Novo</a></button>
     <button type="button"><a href='{}'>Abrir</a></button>
-    """.format(url_for('new'), url_for('opencards'))
-
-
-@app.route("/new")
-def new():      
-    random = str(uuid.uuid4())
-    return render_template("new.html", randname=random)
+    """.format(url_for('createcards'), url_for('opencards'))
 
 
 @app.route("/createcards", methods=["GET", "POST"])
@@ -24,17 +19,16 @@ def createcards():
         fname = request.form.get('filename')
         title = request.form.get('titulo')
         
-        path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
         cards = []
         cards.append(title)
-
-        with open(path, mode="w") as f:
-            json.dump(cards, f)
+        tmpfile.save_new_fname(cards, fname)
 
         response = make_response(render_template("addcards.html"))
         response.set_cookie("filename", fname)
-
         return response
+    
+    random = str(uuid.uuid4())
+    return render_template("new.html", randname=random)
 
 
 @app.route("/createcards/add", methods=["GET", "POST"])
@@ -42,22 +36,11 @@ def add():
     if request.method == "POST":
         formdata = request.form.to_dict()
         
-        # Carrega arquivo temporário
-        fname = request.cookies.get('filename')
-        path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
-        cards = []
-        with open(path, mode="r") as f:
-            cards = json.load(f)
-        
-        # Acrescenta informação e salva arquivo novamente
+        cards = tmpfile.load()
         cards.append(formdata)
+        tmpfile.save(cards)
 
-        with open(path, mode="w") as f:
-            json.dump(cards, f)
-
-        num = len(cards) - 1
-        ok = "Card {} adicionado com sucesso!".format(num)
-
+        ok = "Card {} adicionado com sucesso!".format( len(cards) - 1 )
         return render_template('addcards.html', mensagem=ok)
         
     return render_template('addcards.html')
@@ -65,20 +48,11 @@ def add():
 
 @app.route("/createcards/download_file")
 def download_file():
-    fname = request.cookies.get('filename')
-    path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
-    cards = []
-    with open(path, mode="r") as f:
-        cards = json.load(f)
-    
-    New_fname = secure_filename(cards[0])
-    New_path = os.path.join(current_app.config['TEMP'], (New_fname + ".txt"))
+    cards = tmpfile.load()
+    new_fname = secure_filename(cards[0])
+    tmpfile.save_new_fname(cards, new_fname)
 
-    with open(New_path, mode="w") as f:
-        json.dump(cards, f)
-
-    download = url_for('static', filename=(New_fname + ".txt"))
-
+    download = url_for('static', filename=(new_fname + ".txt"))
     return "<a href='{}' download> Baixar txt </a> ".format(download)
 
 
@@ -91,12 +65,8 @@ def opencards():
         path = os.path.join(current_app.config['TEMP'], (fname + ".txt"))
         thefile.save(path)
         
-        cards = []
-        
         try:
-            with open(path, mode="r") as f:
-                cards = json.load(f)
-            
+            cards = tmpfile.load_path(path) 
             return "<h1> Seus Cards </h1> <p>{}</p>".format(cards)
         
         except:
