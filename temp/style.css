@@ -1,0 +1,78 @@
+.topo {
+    background: background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#E8E8E8));
+    background-image: -webkit-linear-gradient(top, white, #E8E8E8);
+    background-image: -moz-linear-gradient(top,white, #E8E8E8);
+    background-image: linear-gradient(to bottomwhite, #E8E8E8);
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cabecalho {
+    width: 80%;
+    height: 40px;
+    margin: auto;
+    margin-top: 15px; 
+}
+
+.titulo {
+    font-family: 'Dosis', sans-serif;
+    color: lightslategray;
+    float: left;
+    font-size: 30px;
+    padding-top: 3px;
+}
+
+.titulo a{
+    text-decoration: none;
+    color: lightslategray;
+}
+
+body{
+   background-color: background-image: -webkit-gradient(linear, left top, left bottom, from(#0e386b), to(#096d63)) fixed;
+   background-image: -webkit-linear-gradient(top, #0e386b, #096d63);
+   background-image: -moz-linear-gradient(top, #0e386b, #096d63);
+   background-image: linear-gradient(to bottom, #0e386b, #096d63);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+.contato {
+    float: right;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.contato a{
+    text-decoration: none;
+    color: lightslategray;
+}
+
+.conteudo {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.rodape {
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    width: 99%;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 15px;
+}
+
+.hide {
+    display: none;
+}
