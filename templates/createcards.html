@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-
-<form method="post" action="/createcards" 
-enctype="multipart/form-data">
-    <label>Titulo <br />
-        <input type="text" name="titulo" id="titulo" />
+<div class="center">
+    <form method="post" action="/createcards" enctype="multipart/form-data">
+        <label class="text text-title">Titulo <br />
+        <input class="formbox" type="text" name="titulo" id="titulo"/>
     </label>
         <input class="hide" type="text" name="filename" id="filename" value={{randname}} />
 
-    <input type="submit" value="Criar" />
-</form>
+        <input class="btn btn-green" type="submit" value="Criar"/>
 
+    </form>
+</div>
 {% endblock content %}

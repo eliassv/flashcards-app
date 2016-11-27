@@ -1,7 +1,11 @@
 {% extends "base.html" %}
-{% block content %}
+ {% block content %}
 
-    <button type="button"><a href="{{ url_for('createcards') }}">Criar Novo</a></button>
-    <button type="button"><a href="{{ url_for('opencards') }}">Abrir</a></button>
-
+<div class="center">
+    <h1 class="text text-title"> Aprimore seus estudos com flashcards, <br> 
+        um método eficiente de memorização e revisão!</h1>
+    <br><br><br>
+    <a class="btn btn-green" href="{{ url_for('createcards') }}">Criar Novo</a>
+    <a class="btn btn-green" href="{{ url_for('opencards') }}">Abrir</a>
+</div>
 {% endblock content %}

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2> Adicionar Cards </h2>
+<div class="center">
+<h2 class="text text-title"> Adicionar Cards </h2>
 
 {% if mensagem %}
-    <p>{{ mensagem }}</p>
+    <p class="text text-small" >{{ mensagem }}</p>
     </br>
 {% endif %}
 
@@ -12,22 +13,21 @@
 <form method="post" action="{{ url_for('add') }}" enctype="multipart/form-data">
     
     <div>
-        <label>Pergunta </br>
-            <input type="text" name="pergunta" id="pergunta" />
+        <label class="text">Pergunta </br>
+            <input class="formbox" type="text" name="pergunta" id="pergunta" />
         </label> </br>
 
-        <label>Resposta </br>
-            <input type="text" name="resposta" id="resposta" />
+        <label class="text" >Resposta </br>
+            <input class="formbox" type="text" name="resposta" id="resposta" />
         </label> </br>
     </div>
 
-    <input type="submit" value="Adicionar" />
+    <input class="btn btn-green" type="submit" value="Adicionar" />
 </form>
 
 </br>
 
-
-<button type="button"><a href='{{ url_for('download_file') }}'>
-    Finalizar</a></button>
+<a class="btn btn-green" href='{{ url_for('download_file') }}'>Finalizar</a>
+</div>
 
 {% endblock content %}
