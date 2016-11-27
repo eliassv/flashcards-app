@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h1 class="text text-title"> Adicionar cards </h1>
 <div class="center">
-<h2 class="text text-title"> Adicionar Cards </h2>
 
 {% if mensagem %}
     <p class="text text-small" >{{ mensagem }}</p>
@@ -15,19 +15,21 @@
     <div>
         <label class="text">Pergunta </br>
             <input class="formbox" type="text" name="pergunta" id="pergunta" />
-        </label> </br>
+        </label> </br><br>
 
         <label class="text" >Resposta </br>
-            <input class="formbox" type="text" name="resposta" id="resposta" />
+            <textarea class="formbox-text" name="resposta" id="resposta"></textarea>
         </label> </br>
     </div>
 
     <input class="btn btn-green" type="submit" value="Adicionar" />
 </form>
 
-</br>
+</br><br>
 
-<a class="btn btn-green" href='{{ url_for('download_file') }}'>Finalizar</a>
+<a class="btn btn-orange" href='{{ url_for('download_file') }}'>Finalizar</a>
 </div>
 
 {% endblock content %}
+
+

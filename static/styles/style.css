@@ -1,3 +1,9 @@
+/*
+=================================================
+Layout
+=================================================
+*/
+
 .topo {
     background: background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#E8E8E8));
     background-image: -webkit-linear-gradient(top, white, #E8E8E8);
@@ -11,24 +17,12 @@
 }
 
 .cabecalho {
-    width: 80%;
+    width: 70%;
     height: 40px;
     margin: auto;
-    margin-top: 15px; 
+    margin-top: 10px; 
 }
 
-.titulo {
-    font-family: 'Dosis', sans-serif;
-    color: #0e386b;
-    float: left;
-    font-size: 30px;
-    padding-top: 3px;
-}
-
-.titulo a{
-    text-decoration: none;
-    color: #0e386b;
-}
 
 body{
    background-color: background-image: -webkit-gradient(linear, left top, left bottom, from(#0e386b), to(#096d63)) fixed;
@@ -39,28 +33,21 @@ body{
    background-attachment: fixed;
 }
 
-.contato {
-    float: right;
-    padding-top: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-}
-
-.contato a{
-    text-decoration: none;
-    color: lightslategray;
-}
 
 .conteudo {
-    width: 80%;
+    width: 70%;
+    height: 450px;
     margin: auto;
     margin-top: 100px;
+    
 }
 
 footer a{
     color: white;
     text-decoration: none;
 }
+
+
 
 .rodape {
     color: white;
@@ -77,56 +64,101 @@ footer a{
     display: none;
 }
 
+
+.center {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+
 /*
 =================================================
 Buttons
 =================================================
 */
 
+
+
+
 .btn {
     border: none;
     border-radius: 2px;
     display: inline-block;
     margin: 10px;
+    padding: 12px 40px;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
 }
 
 .btn-green{
-    padding: 12px 40px;
-    background: #77d68a;
+    background: #40c45f;
     color: white;
 }
 
-.center {
-    margin: 0;
-    margin-top: 200px;
-    text-align: center;
+.btn-orange{
+    background: #fc962f;
+    color: white;
 }
+
+
+
+/*
+=================================================
+Fonts
+=================================================
+*/
+
+.titulo {
+    font-family: 'Dosis', sans-serif;
+    color: #0e386b;
+    float: left;
+    font-size: 40px;
+    padding-top: 3px;}
+
+.titulo a{
+    text-decoration: none;
+    color: #0e386b;}
+
+
+.contato {
+    float: right;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;}
+
+.contato a{
+    text-decoration: none;
+    color: lightslategray;}
+
 
 .text {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    line-height: 150%;
-}
+    line-height: 150%;}
 
 .text-title{
-    font-size: 25px;
-}
-
+    font-size: 25px;}
 
 .text-small{
-    font-size: 15px;
-}
-
+    font-size: 15px;}
 
 .formbox {
     border: 0;
     padding: 3px;
     display: inline-block;
-    width: 250px;
+    width: 450px;
     height: 33px;
-    font-size: 20px;
-}
+    font-size: 20px;}
+
+.formbox-text {
+    border: 0;
+    padding: 3px;
+    display: inline-block;
+    width: 450px;
+    height: 100px;
+    font-size: 20px;}

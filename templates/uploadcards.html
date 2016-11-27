@@ -1,13 +1,12 @@
-{% extends "base.html" %}
-{% block content %}
-
-<form method="post" action="{{ url_for('opencards') }}"
-enctype="multipart/form-data">
-    <label>Arquivo: </br>
-        <input type="file" name="cardsfile" id="cardsfile" />
-    </label> </br>
-
-    <input type="submit" value="Enviar" />
-</form>
+{% extends "base.html" %} {% block content %}
+<h1 class="text text-title"> Abrir Cards </h1>
+<div class="center">
+    <form method="post" action="{{ url_for('opencards') }}" enctype="multipart/form-data">
+        <label class="text text-title">Arquivo: &nbsp;
+            <input class="text" type="file" name="cardsfile" id="cardsfile" />
+         </label> </br><br>
+        <input class="btn btn-green" type="submit" value="Enviar" />
+    </form>
+</div>
 
 {% endblock content %}

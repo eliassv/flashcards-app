@@ -50,7 +50,7 @@ def download_file():
     tmpfile.save_new_fname(cards, new_fname)
 
     download = url_for('static', filename=("temp/" + new_fname + ".txt"))
-    return "<a href='{}' download> Baixar txt </a> ".format(download)
+    return render_template('download.html', download=download)
 
 
 @app.route("/opencards", methods=["GET", "POST"])
@@ -64,9 +64,11 @@ def opencards():
         
         try:
             cards = tmpfile.load_path(path) 
-            return "<h1> Seus Cards </h1> <p>{}</p>".format(cards)
+            title = cards[0]
+
+            return render_template('showcards.html', cards=cards, titulo=title)
         
         except:
-            return "<h1> Seus Cards </h1> <p>Não foi possível carregar os seus cards</p>"        
+            return render_template("load_error.html")         
 
     return render_template('uploadcards.html')

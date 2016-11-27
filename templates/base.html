@@ -6,7 +6,7 @@
     <title>{% block title %} {{title or "Flashcard App"}} {% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Dosis:800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -14,10 +14,10 @@
 <body>
     <div class="topo">
         <div class="cabecalho">
-            <h1 class="titulo"> 
-                <a id="limpalink" href="{{ url_for('index') }}">
+            <h1 class="titulo">
+                <a title="Ir para o início" id="limpalink" href="{{ url_for('index') }}">
                 Flashcard App! </a></h1>
-            <p class="contato">
+            <p class="contato" title="Acessar o código fonte" >
                 <a href="https://github.com/eliass95/flashcards-app" target="_blank">
                 Source code </a></p>
         </div>
@@ -25,14 +25,12 @@
 
     <div class="conteudo">
         {% block content %} {% endblock %}
-
-
-
-
     </div>
-    <footer>
+
+
+    <footer>    
         <div class="rodape">
-            <p> &copy; Criado por <a href="https://github.com/eliass95" target="_blank"> Elias Soares </a> - 2016 </p>
+            <p><a href="https://github.com/eliass95" target="_blank"> &copy; Criado por Elias Soares - 2016 </a></p>
         </div>
     </footer>
 </body>
