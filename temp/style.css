@@ -19,7 +19,7 @@
 
 .titulo {
     font-family: 'Dosis', sans-serif;
-    color: lightslategray;
+    color: #0e386b;
     float: left;
     font-size: 30px;
     padding-top: 3px;
@@ -27,7 +27,7 @@
 
 .titulo a{
     text-decoration: none;
-    color: lightslategray;
+    color: #0e386b;
 }
 
 body{
@@ -75,4 +75,58 @@ footer a{
 
 .hide {
     display: none;
+}
+
+/*
+=================================================
+Buttons
+=================================================
+*/
+
+.btn {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.btn-green{
+    padding: 12px 40px;
+    background: #77d68a;
+    color: white;
+}
+
+.center {
+    margin: 0;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.text {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.text-title{
+    font-size: 25px;
+}
+
+
+.text-small{
+    font-size: 15px;
+}
+
+
+.formbox {
+    border: 0;
+    padding: 3px;
+    display: inline-block;
+    width: 250px;
+    height: 33px;
+    font-size: 20px;
 }
