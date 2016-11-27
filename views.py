@@ -49,7 +49,7 @@ def download_file():
     new_fname = secure_filename(cards[0])
     tmpfile.save_new_fname(cards, new_fname)
 
-    download = url_for('static', filename=(new_fname + ".txt"))
+    download = url_for('static', filename=("temp/" + new_fname + ".txt"))
     return "<a href='{}' download> Baixar txt </a> ".format(download)
 
 
