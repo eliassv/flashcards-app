@@ -1,6 +1,17 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="text text-title"> {{ titulo }} </h1>
 <div class="center">
-    <p class="text"> {{ cards }}</p>
+    {#<p class="text"> {{ cards }}</p>#}
+
+    <div class="card">
+        <div class="front">
+            <p class="text text-card">Pergunta</p>
+        </div>
+
+        <div class="back">
+            <p class="text text-card">Resposta</p>
+        </div>
+    </div>
+
 </div>
 {% endblock content %}
