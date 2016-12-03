@@ -1,17 +1,81 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="text text-title"> {{ titulo }} </h1>
 <div class="center">
-    {#<p class="text"> {{ cards }}</p>#}
+    {#
+    <p class="text"> {{ cards }}</p>#}
 
-    <div class="card">
-        <div class="front">
-            <p class="text text-card">Pergunta</p>
+
+    <div class="item" id="item-1">
+        <div class="seta">
+            <a href="#item-3"> <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i> </a>
         </div>
 
-        <div class="back">
-            <p class="text text-card">Resposta</p>
+        <div class="card">
+            <div class="front">
+                <p class="text text-card">Porque as capitanias fracassaram?</p>
+            </div>
+
+            <div class="back">
+                <p class="text text-card">Por causa da distância de Portugal; 
+                    falta de interesse de alguns donatários; ataques indígenas;
+                     falta de recursos de alguns donatários; o isolamento entre as capitanias;
+                      falta de colonos que quisessem vir ao Brasil.</p>
+            </div>
+        </div>
+
+        <div class="seta">
+            <a href="#item-2"> <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i> </a>
         </div>
     </div>
+
+
+
+    <div class="item" id="item-2">
+        <div class="seta">
+            <a href="#item-1"> <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i> </a>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <p class="text text-card">Porque a Holanda invadiu o Brasil?</p>
+            </div>
+
+            <div class="back">
+                <p class="text text-card">Por causa do embargo comercial imposto à Holanda 
+                    pela Espanha, que não poderia mais comercializar açúcar como Brasil</p>
+            </div>
+        </div>
+
+        <div class="seta">
+            <a href="#item-3"> <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i> </a>
+        </div>
+    </div>
+
+
+
+    <div class="item" id="item-3">
+        <div class="seta">
+            <a href="#item-2"> <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i> </a>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <p class="text text-card">O que fez Maurício de Nassau?</p>
+            </div>
+
+            <div class="back">
+                <p class="text text-card">Criou linhas de crédito para aumentar a produção de açúcar; 
+                    renegociou dívidas antigas; concedeu liberdade de culto e urbanizou Recife.</p>
+            </div>
+        </div>
+
+        <div class="seta">
+            <a href="#item-1"> <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i> </a>
+        </div>
+    </div>
+
+
+
 
 </div>
 {% endblock content %}

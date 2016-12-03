@@ -9,6 +9,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='font-awesome/css/font-awesome.min.css') }}">
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
@@ -41,7 +44,7 @@
             $(this).toggleClass('flipped');
         });
     
-    
+        window.location = "#item-1";
     </script>
 
 </body>

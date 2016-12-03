@@ -171,8 +171,9 @@ Cards
 */
 
 .card {
-    width: 450px;
-    height: 250px;
+    width: 550px;
+    height: 350px;
+    margin: auto;
     transition: all 0.2s;
     perspective: 900px;
 }
@@ -190,6 +191,8 @@ Cards
 }
 
 .text-card{
+    padding: 25px;
+    font-size: 24px;
     color: black;
     position: relative;
     top: 50%;
@@ -217,3 +220,30 @@ Cards
     transform: rotateY(180deg);
 }
 
+/*
+=================================================
+Carrossel
+=================================================
+*/
+
+.item{
+    display: none;
+}
+
+.item:target{
+    display: inline-flex;
+}
+
+.seta {
+    float: right;
+    width: 100px;
+    height: 350px;
+}
+
+.seta a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 45%;
+    
+}
