@@ -65,8 +65,9 @@ def opencards():
         try:
             cards = tmpfile.load_path(path) 
             title = cards[0]
+            num_itens = len(cards)
 
-            return render_template('showcards.html', cards=cards, titulo=title)
+            return render_template('showcards.html', cards=cards, num_itens=num_itens, titulo=title)
         
         except:
             return render_template("load_error.html")         
