@@ -4,5 +4,9 @@
 <div class="center">
     <h1 class="text text-title"> Clique para baixar seus flashcards </h1> <br>
     <a class="btn btn-orange" href="{{ download }}" download=""> Download </a>
+    <br><br><br><br>
+    <p class="text"> Depois de baixar clique aqui para abrir</p>
+    <a class="btn btn-green" href="{{ url_for('opencards') }}">Abrir</a>
+
 </div>
 {% endblock content %}
