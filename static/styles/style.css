@@ -161,4 +161,59 @@ Fonts
     display: inline-block;
     width: 450px;
     height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;}
+
+/*
+=================================================
+Cards
+=================================================
+*/
+
+.card {
+    width: 450px;
+    height: 250px;
+    transition: all 0.2s;
+    perspective: 900px;
+}
+
+
+.front, .back{
+    position: absolute;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.8s;
+}
+
+.text-card{
+    color: black;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.front{
+    background: yellowgreen;
+}
+
+.back{
+    background: lightgoldenrodyellow;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+
+.flipped .back{
+    transform: rotateY(0deg);   
+}
+
+.flipped .front{
+    transform: rotateY(180deg);
+}
+
