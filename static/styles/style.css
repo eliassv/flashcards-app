@@ -171,8 +171,8 @@ Cards
 */
 
 .card {
-    width: 550px;
-    height: 350px;
+    width: 400px;
+    height: 300px;
     margin: auto;
     transition: all 0.2s;
     perspective: 900px;
@@ -208,9 +208,8 @@ Cards
 }
 
 .back{
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
-
 
 .flipped .back{
     transform: rotateY(0deg);   
@@ -245,5 +244,4 @@ Carrossel
     color: white;
     position: relative;
     top: 45%;
-    
 }
